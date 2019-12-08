@@ -1,0 +1,51 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="form-group">
+          <label for="name">Type</label>
+          <input type="text" [(ngModel)]="drink.type" 
+            class="form-control"
+            id="type"
+            name="type"
+            placeholder="Enter the type"
+            required #name="ngModel">
+            <!--<div [hidden]="!type.pristine" class="alert alert-danger">Type is required</div>-->
+        </div>
+        <!-- color -->
+        <div class="form-group">
+          <label for="color">Color</label>
+          <input type="text" [(ngModel)]="drink.color" 
+            class="form-control"
+            id="color"
+            name="color"
+            placeholder="Enter color"
+            required #email="ngModel">
+          <!--  <div [hidden]="!color.pristine" class="alert alert-danger">Color is required</div>  -->
+        </div>
+        <!-- amount  -->
+        <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="text" [(ngModel)]="drink.amount" 
+              class="form-control"
+              id="amount"
+              name="amount"
+              placeholder="Enter the amount"
+              required #name="ngModel">
+          </div>
+          <!-- <div [hidden]="!amount.pristine" class="alert alert-danger">amount is required</div> -->
+          <!-- storedAt -->
+          <div class="form-group">
+              <label for="storedAt">storedAt</label>
+              <input type="text" [(ngModel)]="drink.storedAt" 
+                class="form-control"
+                id="storedAt"
+                name="storedAt"
+                placeholder="Enter the storedAt"
+                required #name="ngModel">
+            </div>
+            <!--<div [hidden]="!storedAt.pristine" class="alert alert-danger">storedAt is required</div>-->
+        <button type="submit" [disabled]="!userForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

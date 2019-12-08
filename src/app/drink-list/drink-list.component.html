@@ -1,0 +1,39 @@
+  
+<div class="row">
+    <div class="col">
+      <h1 class="display-2">My wines?</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">type</th>
+            <th scope="col">colors</th>
+            <th scope="col">amount</th>
+            <th scope="col">storedAt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of filteredDrinks" (click)="onSelectDrinks(drink)" [class.table-info]="drink === selectedDrink" >
+            <th scope="row">{{ drink.id }}</th>
+            <td>
+              <a [routerLink]="['/drink/wines', drink.id]">
+                {{ drink.id }}
+              </a>
+            </td>
+            <td>{{ drink.type }}</td>
+            <td>{{ drink.colors }}</td>
+            <td>
+              <button mat-raised-button color="primary" (click)="onDeleteClick(drink.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- <status-filter [status]="selectedStatus" (onChange)="onFilterChange($event)"></status-filter> 
+  
+  <button mat-raised-button color="primary" (click)="onNewClick()">New drink</button>
+  <div class="col" *ngIf="selectedDrink">
+    <drink-list [drink]="selectedDrink" (onSubmit)="onFormSubmit($event)"></drink-list>
+  </div>
+-->

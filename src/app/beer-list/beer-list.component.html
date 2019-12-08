@@ -1,0 +1,20 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">type</th>
+            <th scope="col">origin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let beer of beers">
+            <td>{{ beer.type }}</td>
+            <td>{{ beer.origin }}</td>
+            <td>{{ beer.color }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
